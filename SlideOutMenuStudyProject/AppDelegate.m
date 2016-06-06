@@ -19,6 +19,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Override point for customization after application launch.
 
+	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
 	self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
 	LoginViewController *homeVc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
 	UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:homeVc];

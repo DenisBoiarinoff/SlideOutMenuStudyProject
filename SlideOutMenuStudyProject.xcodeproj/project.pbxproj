@@ -14,6 +14,10 @@
 		59F32B9E1D053F15000BBD45 /* SlideOutMenuStudyProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F32B9D1D053F15000BBD45 /* SlideOutMenuStudyProjectTests.m */; };
 		59F32BAB1D053FD8000BBD45 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F32BA91D053FD8000BBD45 /* LoginViewController.m */; };
 		59F32BAC1D053FD8000BBD45 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59F32BAA1D053FD8000BBD45 /* LoginViewController.xib */; };
+		59F32BB01D0552B8000BBD45 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F32BAE1D0552B8000BBD45 /* MainViewController.m */; };
+		59F32BB11D0552B8000BBD45 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59F32BAF1D0552B8000BBD45 /* MainViewController.xib */; };
+		59F32BB51D0565C7000BBD45 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F32BB31D0565C7000BBD45 /* HomeViewController.m */; };
+		59F32BB61D0565C7000BBD45 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59F32BB41D0565C7000BBD45 /* HomeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,12 @@
 		59F32BA81D053FD8000BBD45 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		59F32BA91D053FD8000BBD45 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		59F32BAA1D053FD8000BBD45 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		59F32BAD1D0552B8000BBD45 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		59F32BAE1D0552B8000BBD45 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		59F32BAF1D0552B8000BBD45 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		59F32BB21D0565C7000BBD45 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		59F32BB31D0565C7000BBD45 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		59F32BB41D0565C7000BBD45 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +100,12 @@
 				59F32BA81D053FD8000BBD45 /* LoginViewController.h */,
 				59F32BA91D053FD8000BBD45 /* LoginViewController.m */,
 				59F32BAA1D053FD8000BBD45 /* LoginViewController.xib */,
+				59F32BAD1D0552B8000BBD45 /* MainViewController.h */,
+				59F32BAE1D0552B8000BBD45 /* MainViewController.m */,
+				59F32BAF1D0552B8000BBD45 /* MainViewController.xib */,
+				59F32BB21D0565C7000BBD45 /* HomeViewController.h */,
+				59F32BB31D0565C7000BBD45 /* HomeViewController.m */,
+				59F32BB41D0565C7000BBD45 /* HomeViewController.xib */,
 			);
 			path = SlideOutMenuStudyProject;
 			sourceTree = "<group>";
@@ -195,7 +211,9 @@
 			files = (
 				59F32BAC1D053FD8000BBD45 /* LoginViewController.xib in Resources */,
 				59F32B931D053F15000BBD45 /* LaunchScreen.storyboard in Resources */,
+				59F32BB61D0565C7000BBD45 /* HomeViewController.xib in Resources */,
 				59F32B901D053F15000BBD45 /* Assets.xcassets in Resources */,
+				59F32BB11D0552B8000BBD45 /* MainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +234,8 @@
 				59F32BAB1D053FD8000BBD45 /* LoginViewController.m in Sources */,
 				59F32B881D053F15000BBD45 /* AppDelegate.m in Sources */,
 				59F32B851D053F15000BBD45 /* main.m in Sources */,
+				59F32BB51D0565C7000BBD45 /* HomeViewController.m in Sources */,
+				59F32BB01D0552B8000BBD45 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +362,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rhinoda.SlideOutMenuStudyProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -354,6 +375,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rhinoda.SlideOutMenuStudyProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

@@ -34,4 +34,8 @@
 }
 */
 
+- (IBAction)someBTN:(id)sender {
+	NSLog(@"Some BTN");
+
+}
 @end
