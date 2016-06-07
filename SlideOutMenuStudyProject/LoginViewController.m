@@ -9,7 +9,9 @@
 #import "LoginViewController.h"
 #import "MainViewController.h"
 
-#define CORNER_RADIUS 3
+#import "UIColor+ColorFromHex.h"
+
+#define CORNER_RADIUS 10
 
 @interface LoginViewController ()
 
@@ -29,6 +31,16 @@
 	[self.emailAndPass.layer setCornerRadius:CORNER_RADIUS];
 
 	[self.forgotPassBtn.layer setCornerRadius:CORNER_RADIUS];
+
+	CALayer *bottomBorder = [CALayer layer];
+
+	float emailHeight = self.emailAndPass.frame.size.height / 2 - 1;
+	float emailWidth = [[UIScreen mainScreen] bounds].size.width / 2;
+	bottomBorder.frame = CGRectMake(0, emailHeight, emailWidth, 1.0f);
+
+	bottomBorder.backgroundColor = [UIColor colorwithHexString:@"e9e9e9" alpha:1.].CGColor;
+	[self.emailAndPass.layer addSublayer:bottomBorder];
+
     // Do any additional setup after loading the view from its nib.
 }
 

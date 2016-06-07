@@ -15,14 +15,18 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeBG" highlightedImage="background" translatesAutoresizingMaskIntoConstraints="NO" id="KtF-an-YMa">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeBGshadow" highlightedImage="background" translatesAutoresizingMaskIntoConstraints="NO" id="KtF-an-YMa">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                 </imageView>
                 <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="yyc-rp-i6h">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                     <textInputTraits key="textInputTraits"/>
+                    <scopeButtonTitles>
+                        <string>Title</string>
+                        <string>Title</string>
+                    </scopeButtonTitles>
                 </searchBar>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSD-zX-PZU">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSD-zX-PZU">
                     <rect key="frame" x="8" y="44" width="173" height="102"/>
                     <state key="normal" title="Button"/>
                     <connections>
@@ -40,10 +44,16 @@
                 <constraint firstItem="KtF-an-YMa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="wXo-tA-dKP"/>
                 <constraint firstItem="yyc-rp-i6h" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xQQ-4Z-Fgu"/>
             </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="yyc-rp-i6h"/>
+                    <exclude reference="WSD-zX-PZU"/>
+                </mask>
+            </variation>
         </view>
     </objects>
     <resources>
         <image name="background" width="1410" height="2000"/>
-        <image name="homeBG" width="1410" height="2000"/>
+        <image name="homeBGshadow" width="1410" height="2000"/>
     </resources>
 </document>

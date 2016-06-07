@@ -10,11 +10,14 @@
 
 @interface MainViewController : UIViewController <UIGestureRecognizerDelegate>
 
+@property (strong, nonatomic) IBOutlet UIView *menuView;
 
-- (IBAction)ShowMenu:(id)sender;
-- (IBAction)BackMenu:(id)sender;
+//- (IBAction)ShowMenu:(id)sender;
+//- (IBAction)BackMenu:(id)sender;
 
 - (void)menuViewTap:(UITapGestureRecognizer *)recognizer;
 - (void)homeViewTap:(UITapGestureRecognizer *)recognizer;
+
+@property (strong, nonatomic) IBOutlet UIButton *homeBtn;
 
 @end
