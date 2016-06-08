@@ -21,7 +21,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnC-HQ-oBs">
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnC-HQ-oBs">
                     <rect key="frame" x="150" y="440" width="300" height="85"/>
                     <color key="backgroundColor" red="0.46666666666666667" green="0.75294117647058822" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -31,6 +31,11 @@
                     <state key="normal" title="Login">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="NEN-fW-Xl6"/>
+                        </mask>
+                    </variation>
                     <connections>
                         <action selector="verifyData:" destination="-1" eventType="touchUpInside" id="OIT-Kk-CUE"/>
                     </connections>
@@ -47,16 +52,16 @@
                         <action selector="toForgotPass:" destination="-1" eventType="touchUpInside" id="oVB-Ja-bGg"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VZi-YP-ThC">
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VZi-YP-ThC">
                     <rect key="frame" x="150" y="210" width="300" height="180"/>
                     <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QhJ-nn-Ra7">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QhJ-nn-Ra7">
                             <rect key="frame" x="30" y="0.0" width="270" height="90"/>
                             <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J1g-1e-yJq">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J1g-1e-yJq">
                             <rect key="frame" x="30" y="90" width="270" height="90"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -75,18 +80,25 @@
                         <constraint firstItem="J1g-1e-yJq" firstAttribute="leading" secondItem="VZi-YP-ThC" secondAttribute="leading" constant="30" id="wdX-Yc-IPO"/>
                         <constraint firstAttribute="trailing" secondItem="QhJ-nn-Ra7" secondAttribute="trailing" id="xAP-U9-xKf"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="GFf-5c-duz"/>
+                        </mask>
+                    </variation>
                 </view>
             </subviews>
             <color key="backgroundColor" red="0.13725490196078433" green="0.13725490196078433" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="pnC-HQ-oBs" firstAttribute="top" secondItem="VZi-YP-ThC" secondAttribute="bottom" constant="50" id="BeB-Bg-lfn"/>
                 <constraint firstAttribute="bottom" secondItem="ihY-wr-6II" secondAttribute="bottom" constant="70" id="QPS-ZC-GST"/>
+                <constraint firstItem="pnC-HQ-oBs" firstAttribute="height" secondItem="QhJ-nn-Ra7" secondAttribute="height" id="f8q-K9-qgP"/>
                 <constraint firstItem="VZi-YP-ThC" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="1:2" id="hDF-5u-6da"/>
                 <constraint firstItem="VZi-YP-ThC" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="koD-cc-OoW"/>
                 <constraint firstItem="VZi-YP-ThC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="oSK-oa-qKr"/>
                 <constraint firstItem="ihY-wr-6II" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="wXd-yV-dax"/>
                 <constraint firstItem="pnC-HQ-oBs" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="1:2" id="yuK-WF-Gt4"/>
                 <constraint firstItem="pnC-HQ-oBs" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="zCJ-Cn-2ix"/>
+                <constraint firstItem="VZi-YP-ThC" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="1:11.2" id="zzu-ZG-TwQ"/>
             </constraints>
         </view>
     </objects>

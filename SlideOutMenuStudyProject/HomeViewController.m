@@ -10,13 +10,40 @@
 
 @interface HomeViewController ()
 
+
+
 @end
 
 @implementation HomeViewController
 
+@synthesize isFullMenu;
+
+static NSString *backgroundImg = @"homeBGshadow";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+	UIImage *img = [UIImage imageNamed:backgroundImg];
+	[self.background setImage:img];
+//	self.isFullMenu = false;
+//
+//	CAShapeLayer * maskLayer = [CAShapeLayer layer];
+//	maskLayer.path = [UIBezierPath bezierPathWithRoundedRect: self.view.bounds byRoundingCorners: UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii: (CGSize){10., 10.}].CGPath;
+//
+//	self.view.layer.mask = maskLayer;
+
+//	[self.view.layer setCornerRadius:10];
+//	[self.menu.layer setCornerRadius:10];
+//	[self.infoView.layer setCornerRadius:10];
     // Do any additional setup after loading the view from its nib.
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+
+	UIImage *img = [UIImage imageNamed:backgroundImg];
+	[self.background setImage:img];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,4 +65,26 @@
 	NSLog(@"Some BTN");
 
 }
+
+- (IBAction)menuBtn:(id)sender {
+	NSLog(@"Menu Btn");
+
+	if (self.parentViewController) {
+
+	}
+
+	if (self.isFullMenu) {
+		[self.delegate movePanelToOriginalPosition];
+		self.isFullMenu = false;
+	} else {
+		[self.delegate movePanelRight];
+		self.isFullMenu = true;
+	}
+}
+
+- (void)setTitle:(NSString *)title
+{
+	[self.titleLabel setText:title];
+}
+
 @end

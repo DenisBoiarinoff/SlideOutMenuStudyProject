@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainViewController : UIViewController <UIGestureRecognizerDelegate>
+@interface MainViewController : UIViewController 
 
 @property (strong, nonatomic) IBOutlet UIView *menuView;
 

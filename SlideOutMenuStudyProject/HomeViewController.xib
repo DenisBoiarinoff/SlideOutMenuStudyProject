@@ -3,10 +3,16 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
             <connections>
+                <outlet property="background" destination="KtF-an-YMa" id="5y6-Vv-AOz"/>
+                <outlet property="infoView" destination="gLz-UH-Q2B" id="Tp4-uP-nzc"/>
+                <outlet property="menu" destination="LHl-5x-MoV" id="p5c-eZ-RT0"/>
+                <outlet property="titleLabel" destination="Bfw-ae-tRW" id="Cxq-7K-jvd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,45 +21,57 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeBGshadow" highlightedImage="background" translatesAutoresizingMaskIntoConstraints="NO" id="KtF-an-YMa">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" highlightedImage="background" translatesAutoresizingMaskIntoConstraints="NO" id="KtF-an-YMa">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                 </imageView>
-                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="yyc-rp-i6h">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                    <textInputTraits key="textInputTraits"/>
-                    <scopeButtonTitles>
-                        <string>Title</string>
-                        <string>Title</string>
-                    </scopeButtonTitles>
-                </searchBar>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSD-zX-PZU">
-                    <rect key="frame" x="8" y="44" width="173" height="102"/>
-                    <state key="normal" title="Button"/>
-                    <connections>
-                        <action selector="someBTN:" destination="-1" eventType="touchUpInside" id="aaI-vh-FK8"/>
-                    </connections>
-                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gLz-UH-Q2B">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LHl-5x-MoV">
+                            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="LHl-5x-MoV" secondAttribute="height" multiplier="1:1" id="PIA-RQ-Y4q"/>
+                            </constraints>
+                            <state key="normal" image="search"/>
+                            <connections>
+                                <action selector="menuBtn:" destination="-1" eventType="touchUpInside" id="Pk9-Qz-Nxq"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bfw-ae-tRW">
+                            <rect key="frame" x="20" y="0.0" width="580" height="20"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Bfw-ae-tRW" secondAttribute="bottom" id="Jqc-nu-T5j"/>
+                        <constraint firstAttribute="trailing" secondItem="Bfw-ae-tRW" secondAttribute="trailing" id="O7s-zL-3WB"/>
+                        <constraint firstItem="LHl-5x-MoV" firstAttribute="top" secondItem="gLz-UH-Q2B" secondAttribute="top" id="Oma-IE-rgW"/>
+                        <constraint firstItem="Bfw-ae-tRW" firstAttribute="top" secondItem="gLz-UH-Q2B" secondAttribute="top" id="jOJ-Av-bQ3"/>
+                        <constraint firstItem="LHl-5x-MoV" firstAttribute="leading" secondItem="gLz-UH-Q2B" secondAttribute="leading" id="ouF-9h-KJZ"/>
+                        <constraint firstItem="LHl-5x-MoV" firstAttribute="width" secondItem="gLz-UH-Q2B" secondAttribute="height" multiplier="1:1" id="poI-TH-Rkh"/>
+                        <constraint firstAttribute="bottom" secondItem="LHl-5x-MoV" secondAttribute="bottom" id="wbf-mT-FX2"/>
+                        <constraint firstItem="Bfw-ae-tRW" firstAttribute="leading" secondItem="LHl-5x-MoV" secondAttribute="trailing" id="zFH-St-Yn1"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="yyc-rp-i6h" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="7UY-xd-iRZ"/>
+                <constraint firstItem="gLz-UH-Q2B" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Nk9-l3-yCi"/>
+                <constraint firstItem="gLz-UH-Q2B" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="UPz-Vz-wEU"/>
+                <constraint firstAttribute="trailing" secondItem="gLz-UH-Q2B" secondAttribute="trailing" id="djk-8J-0dL"/>
                 <constraint firstItem="KtF-an-YMa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="eAZ-cf-y23"/>
-                <constraint firstAttribute="trailing" secondItem="yyc-rp-i6h" secondAttribute="trailing" id="ftg-VX-6Vg"/>
                 <constraint firstAttribute="bottom" secondItem="KtF-an-YMa" secondAttribute="bottom" id="ipV-wV-OEJ"/>
                 <constraint firstAttribute="trailing" secondItem="KtF-an-YMa" secondAttribute="trailing" id="scX-tE-kwJ"/>
+                <constraint firstItem="gLz-UH-Q2B" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="65:2000" id="vXW-9Q-BGZ"/>
                 <constraint firstItem="KtF-an-YMa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="wXo-tA-dKP"/>
-                <constraint firstItem="yyc-rp-i6h" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xQQ-4Z-Fgu"/>
             </constraints>
-            <variation key="default">
-                <mask key="subviews">
-                    <exclude reference="yyc-rp-i6h"/>
-                    <exclude reference="WSD-zX-PZU"/>
-                </mask>
-            </variation>
         </view>
     </objects>
     <resources>
         <image name="background" width="1410" height="2000"/>
-        <image name="homeBGshadow" width="1410" height="2000"/>
+        <image name="search" width="30" height="21"/>
     </resources>
 </document>
