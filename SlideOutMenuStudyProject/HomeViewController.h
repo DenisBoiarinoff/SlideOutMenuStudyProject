@@ -22,14 +22,11 @@
 
 @property (nonatomic, assign) id<HomeViewControllerDelegate> delegate;
 
-@property (strong, nonatomic) IBOutlet UIView *infoView;
-@property (strong, nonatomic) IBOutlet UIButton *menu;
-
-@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UIView *infoView2;
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel2;
 
 - (void)setTitle:(NSString *)title;
 
-- (IBAction)someBTN:(id)sender;
 - (IBAction)menuBtn:(id)sender;
 
 @property (assign, nonatomic) BOOL isFullMenu;

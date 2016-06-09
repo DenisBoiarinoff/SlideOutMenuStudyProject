@@ -3,16 +3,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
             <connections>
                 <outlet property="background" destination="KtF-an-YMa" id="5y6-Vv-AOz"/>
-                <outlet property="infoView" destination="gLz-UH-Q2B" id="Tp4-uP-nzc"/>
-                <outlet property="menu" destination="LHl-5x-MoV" id="p5c-eZ-RT0"/>
-                <outlet property="titleLabel" destination="Bfw-ae-tRW" id="Cxq-7K-jvd"/>
+                <outlet property="infoView2" destination="49J-oP-XAw" id="xO8-xh-cgR"/>
+                <outlet property="titleLabel2" destination="EI6-4Y-wpd" id="a1d-BO-3ds"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,57 +19,43 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" highlightedImage="background" translatesAutoresizingMaskIntoConstraints="NO" id="KtF-an-YMa">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeBGshadow" highlightedImage="background" translatesAutoresizingMaskIntoConstraints="NO" id="KtF-an-YMa">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gLz-UH-Q2B">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="49J-oP-XAw">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LHl-5x-MoV">
-                            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="LHl-5x-MoV" secondAttribute="height" multiplier="1:1" id="PIA-RQ-Y4q"/>
-                            </constraints>
-                            <state key="normal" image="search"/>
-                            <connections>
-                                <action selector="menuBtn:" destination="-1" eventType="touchUpInside" id="Pk9-Qz-Nxq"/>
-                            </connections>
-                        </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bfw-ae-tRW">
-                            <rect key="frame" x="20" y="0.0" width="580" height="20"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EI6-4Y-wpd">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="Bfw-ae-tRW" secondAttribute="bottom" id="Jqc-nu-T5j"/>
-                        <constraint firstAttribute="trailing" secondItem="Bfw-ae-tRW" secondAttribute="trailing" id="O7s-zL-3WB"/>
-                        <constraint firstItem="LHl-5x-MoV" firstAttribute="top" secondItem="gLz-UH-Q2B" secondAttribute="top" id="Oma-IE-rgW"/>
-                        <constraint firstItem="Bfw-ae-tRW" firstAttribute="top" secondItem="gLz-UH-Q2B" secondAttribute="top" id="jOJ-Av-bQ3"/>
-                        <constraint firstItem="LHl-5x-MoV" firstAttribute="leading" secondItem="gLz-UH-Q2B" secondAttribute="leading" id="ouF-9h-KJZ"/>
-                        <constraint firstItem="LHl-5x-MoV" firstAttribute="width" secondItem="gLz-UH-Q2B" secondAttribute="height" multiplier="1:1" id="poI-TH-Rkh"/>
-                        <constraint firstAttribute="bottom" secondItem="LHl-5x-MoV" secondAttribute="bottom" id="wbf-mT-FX2"/>
-                        <constraint firstItem="Bfw-ae-tRW" firstAttribute="leading" secondItem="LHl-5x-MoV" secondAttribute="trailing" id="zFH-St-Yn1"/>
+                        <constraint firstAttribute="bottom" secondItem="EI6-4Y-wpd" secondAttribute="bottom" id="9r5-uO-FcN"/>
+                        <constraint firstAttribute="trailing" secondItem="EI6-4Y-wpd" secondAttribute="trailing" id="gPG-Ra-wTu"/>
+                        <constraint firstItem="EI6-4Y-wpd" firstAttribute="leading" secondItem="49J-oP-XAw" secondAttribute="leading" id="pfT-Br-280"/>
+                        <constraint firstItem="EI6-4Y-wpd" firstAttribute="top" secondItem="49J-oP-XAw" secondAttribute="top" id="tod-0U-xVq"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="gLz-UH-Q2B" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Nk9-l3-yCi"/>
-                <constraint firstItem="gLz-UH-Q2B" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="UPz-Vz-wEU"/>
-                <constraint firstAttribute="trailing" secondItem="gLz-UH-Q2B" secondAttribute="trailing" id="djk-8J-0dL"/>
+                <constraint firstItem="49J-oP-XAw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="FyC-Ez-csi"/>
+                <constraint firstAttribute="trailing" secondItem="49J-oP-XAw" secondAttribute="trailing" id="Lib-L0-baE"/>
                 <constraint firstItem="KtF-an-YMa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="eAZ-cf-y23"/>
+                <constraint firstItem="49J-oP-XAw" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="65:2000" id="fmd-U2-pvb"/>
                 <constraint firstAttribute="bottom" secondItem="KtF-an-YMa" secondAttribute="bottom" id="ipV-wV-OEJ"/>
+                <constraint firstItem="49J-oP-XAw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="j3s-Ve-IM5"/>
                 <constraint firstAttribute="trailing" secondItem="KtF-an-YMa" secondAttribute="trailing" id="scX-tE-kwJ"/>
-                <constraint firstItem="gLz-UH-Q2B" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="65:2000" id="vXW-9Q-BGZ"/>
                 <constraint firstItem="KtF-an-YMa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="wXo-tA-dKP"/>
             </constraints>
         </view>
     </objects>
     <resources>
         <image name="background" width="1410" height="2000"/>
-        <image name="search" width="30" height="21"/>
+        <image name="homeBGshadow" width="1410" height="2000"/>
     </resources>
 </document>

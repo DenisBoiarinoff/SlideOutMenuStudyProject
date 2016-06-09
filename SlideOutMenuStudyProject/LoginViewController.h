@@ -12,6 +12,9 @@
 
 @interface LoginViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UITextField *emailTextLabel;
+@property (strong, nonatomic) IBOutlet UITextField *passTextLabel;
+
 @property (strong, nonatomic) IBOutlet UIView *emailAndPass;
 @property (strong, nonatomic) IBOutlet UIButton *loginBtn;
 

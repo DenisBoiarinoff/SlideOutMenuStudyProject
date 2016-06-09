@@ -74,32 +74,32 @@ NSArray *btnTitleArray;
 	[self addChildViewController:_homeViewController];
 
 	[self.homeViewController didMoveToParentViewController:self];
-//	self.homeViewController.view.frame = CGRectMake(self.startWidth,
-//													18,
-//													self.view.frame.size.width - self.startWidth,
-//													self.view.frame.size.height - 18);
-
 	self.homeViewController.view.frame = CGRectMake(self.startWidth,
 													18,
-													parentWidth - self.startWidth,
-													parentHeight - 18);
+													self.view.frame.size.width - self.startWidth,
+													self.view.frame.size.height /*- 18*/);
 
-	NSLog(@"%f, %f, %f, %f",
-		  self.homeViewController.view.frame.origin.x,
-		  self.homeViewController.view.frame.origin.y,
-		  self.homeViewController.view.frame.size.width,
-		  self.homeViewController.view.frame.size.height);
+//	self.homeViewController.view.frame = CGRectMake(self.startWidth,
+//													18,
+//													parentWidth - self.startWidth,
+//													parentHeight - 18);
+
+//	NSLog(@"%f, %f, %f, %f",
+//		  self.homeViewController.view.frame.origin.x,
+//		  self.homeViewController.view.frame.origin.y,
+//		  self.homeViewController.view.frame.size.width,
+//		  self.homeViewController.view.frame.size.height);
 //	NSLog(@"%f, %f, %f, %f",
 //		  self.homeViewController.view.bounds.origin.x,
 //		  self.homeViewController.view.bounds.origin.y,
 //		  self.homeViewController.view.bounds.size.width,
 //		  self.homeViewController.view.bounds.size.height);
 
-	[self.homeViewController.view setRoundedCorners:UIRectCornerTopLeft|UIRectCornerTopRight radius:10.0];
-//	self.homeViewController.view.frame = CGRectMake(START_WIDTH, 18,  self.view.frame.size.width - START_WIDTH, self.view.frame.size.height - 18);
+//	[self.homeViewController.view setRoundedCorners:UIRectCornerTopLeft|UIRectCornerTopRight radius:10.0];
 
-//	[self.homeViewController.view.layer setCornerRadius:10];
-//	[self.homeViewController.view.layer setMasksToBounds:YES];
+
+	[self.homeViewController.view.layer setCornerRadius:10];
+	[self.homeViewController.view.layer setMasksToBounds:YES];
 
 //	UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.homeViewController.view.bounds
 //												   byRoundingCorners:(UIRectCornerTopLeft | UIRectCornerTopRight )
@@ -109,6 +109,10 @@ NSArray *btnTitleArray;
 //	maskLayer.frame = self.homeViewController.view.bounds;
 //	maskLayer.path  = maskPath.CGPath;
 //	self.homeViewController.view.layer.mask = maskLayer;
+
+//	[self.homeViewController reloadInputViews];
+
+//	[self.homeViewController.background setNeedsDisplay];
 
 
 	UITapGestureRecognizer *recognizer1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(homeViewTap:)];
@@ -237,8 +241,7 @@ NSArray *btnTitleArray;
 
 	[UIView animateWithDuration:.25 delay:0 options:UIViewAnimationOptionBeginFromCurrentState
 					 animations:^{
-//						 self.homeViewController.view.frame = CGRectMake(self.max_width, 18, self.view.frame.size.width - START_WIDTH, self.view.frame.size.height - 18);
-						 self.homeViewController.view.frame = CGRectMake(self.max_width, 18, self.view.frame.size.width - self.startWidth, self.view.frame.size.height - 18);
+						 self.homeViewController.view.frame = CGRectMake(self.max_width, 18, self.view.frame.size.width - self.startWidth, self.view.frame.size.height /*- 18*/);
 					 }
 					 completion:^(BOOL finished) {
 						 if (finished) {
@@ -252,24 +255,25 @@ NSArray *btnTitleArray;
 - (void)homeViewTap:(UITapGestureRecognizer *)recognizer
 {
 	NSLog(@"HomeViewTap");
-	[UIView animateWithDuration:.25 delay:0 options:UIViewAnimationOptionBeginFromCurrentState
-					 animations:^{
-//						 self.homeViewController.view.frame = CGRectMake(START_WIDTH, 18, self.view.frame.size.width - START_WIDTH, self.view.frame.size.height - 18);
-						 self.homeViewController.view.frame = CGRectMake(self.startWidth, 18, self.view.frame.size.width - self.startWidth, self.view.frame.size.height - 18);
-					 }
-					 completion:^(BOOL finished) {
-						 if (finished) {
-							 self.isFulPanel = FALSE;
-							 [self.homeViewController setIsFullMenu:self.isFulPanel];
-							 //							 [self resetMainView];
-						 }
-					 }];
+	[self movePanelToOriginalPosition];
+
+//	[UIView animateWithDuration:.25 delay:0 options:UIViewAnimationOptionBeginFromCurrentState
+//					 animations:^{
+//						 self.homeViewController.view.frame = CGRectMake(self.startWidth, 18, self.view.frame.size.width - self.startWidth, self.view.frame.size.height /*- 18*/);
+//					 }
+//					 completion:^(BOOL finished) {
+//						 if (finished) {
+//							 self.isFulPanel = FALSE;
+//							 [self.homeViewController setIsFullMenu:self.isFulPanel];
+//							 //							 [self resetMainView];
+//						 }
+//					 }];
 }
 
 - (void) addButtonsToMenu
 {
 	int parentHeight = [[UIScreen mainScreen] bounds].size.height;
-	float space = parentHeight / 13.67;
+	float space = parentHeight / 13.67 + 10;
 
 //	CGRect frameRect = CGRectMake(0, [self.menuView viewWithTag:150].frame.size.height,
 //								  self.max_width, self.btnSide);
@@ -277,7 +281,7 @@ NSArray *btnTitleArray;
 	CGRect frameRect = CGRectMake(0, space, self.max_width, self.btnSide);
 
 	for (int i = 0; i < 5; i++) {
-		NSLog(@"%f",frameRect.origin.y);
+//		NSLog(@"%f",frameRect.origin.y);
 		UIButton *btn = [self getBtnWithImgUrl:[btnImgUrlArray objectAtIndex:i]
 										 frame:frameRect
 										   tag:300 + i
@@ -305,15 +309,27 @@ NSArray *btnTitleArray;
 {
 	UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
 	[btn setFrame:frame];
-	NSLog(@"%f", btn.frame.origin.y);
 
-	float imgSide = self.btnSide / 2.2;
+	float imgSide = self.btnSide / 2.1;
 
 	UIImage *img = [UIImage imageNamed:imgUrl];
-//	CGSize imgSize = img.size;
-//	CGSize imgSize = CGSizeMake(self.btnSide / 2.37, self.btnSide / 2.37);
+	CGSize imgSize = img.size;
 
-//	CGSize imageSize = CGSizeMake(self.btnSide - 10, self.btnSide - 10);
+	float xRatio;
+	float yRatio;
+
+	if (imgSize.width > imgSize.height) {
+		xRatio = 1;
+		yRatio = imgSize.height / imgSize.width;
+	} else {
+		xRatio = imgSize.width / imgSize.height;
+		yRatio = 1;
+	}
+
+	float spaceToImg = (self.startWidth - self.btnSide)/2;
+
+	[btn setImageEdgeInsets:UIEdgeInsetsMake(0, spaceToImg, 0, 0)];
+
 	CGSize imageSize = CGSizeMake(self.btnSide, self.btnSide);
 	UIColor *fillColor = [UIColor colorwithHexString:@"232324" alpha:1];
 
@@ -322,20 +338,12 @@ NSArray *btnTitleArray;
 	[fillColor setFill];
 	CGContextFillRect(context, CGRectMake(0, 0, imageSize.width, imageSize.height));
 
-//	CGPoint imagePoint = CGPointMake((self.btnSide - 10)/2 - imgSize.width/2, (self.btnSide - 10)/2 - imgSize.height/2);
-//	[img drawAtPoint:imagePoint];
+	[img drawInRect:CGRectMake((self.btnSide - imgSide * xRatio)/2, (self.btnSide - imgSide * yRatio)/2, imgSide * xRatio, imgSide * yRatio)];
 
-//	[img drawInRect:CGRectMake((self.btnSide - 10)/2 - imgSide/2, (self.btnSide - 10)/2 - imgSide/2, imgSide, imgSide)];
-	[img drawInRect:CGRectMake(self.btnSide/2 - imgSide/2, self.btnSide/2 - imgSide/2, imgSide, imgSide)];
 	UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
 
 	[btn setImage:image forState:UIControlStateNormal];
-
-	float space = (self.startWidth - self.btnSide)/2;
-
-	[btn setImageEdgeInsets:UIEdgeInsetsMake(0, space, 0, 0)];
-
 
 	fillColor = [UIColor colorwithHexString:@"313132" alpha:1];
 
@@ -343,26 +351,22 @@ NSArray *btnTitleArray;
 	CGContextRef context1 = UIGraphicsGetCurrentContext();
 	[fillColor setFill];
 	CGContextFillRect(context1, CGRectMake(0, 0, imageSize.width, imageSize.height));
-//	[img drawAtPoint:imagePoint];
-//	[img drawInRect:CGRectMake((self.btnSide - 10)/2 - imgSide/2, (self.btnSide - 10)/2 - imgSide/2, imgSide, imgSide)];
-	[img drawInRect:CGRectMake(self.btnSide/2 - imgSide/2, self.btnSide/2 - imgSide/2, imgSide, imgSide)];
+	[img drawInRect:CGRectMake((self.btnSide - imgSide * xRatio)/2, (self.btnSide - imgSide * yRatio)/2, imgSide * xRatio, imgSide * yRatio)];
+
 	image = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
-
-
 
 	[btn setImage:image forState:UIControlStateSelected];
 	UIView *btnimageView = [btn imageView];
 	[btnimageView.layer setCornerRadius:5];
-	[btnimageView.layer setBorderColor:[UIColor greenColor].CGColor];
-	[btnimageView.layer setBorderWidth:1.f];
-
+	[btnimageView.layer setBorderColor:[UIColor colorwithHexString:@"232324" alpha:1].CGColor];
+	[btnimageView.layer setBorderWidth:1.5f];
 
 	[btn setTitle:title forState:UIControlStateNormal];
 	[btn setTitleEdgeInsets:UIEdgeInsetsMake(0, 45, 0, 0)];
 
-	[btn.layer setBorderWidth:2.f];
-	[btn.layer setBorderColor:[UIColor redColor].CGColor];
+//	[btn.layer setBorderWidth:2.f];
+//	[btn.layer setBorderColor:[UIColor redColor].CGColor];
 	btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
 
 	[btn setFont:[UIFont fontWithName:@"Helvetica-Neue" size:20]];
@@ -405,20 +409,22 @@ NSArray *btnTitleArray;
 	[self cancelSelection];
 	UIButton *btn = (UIButton *)[self.menuView viewWithTag:tag];
 	[btn setSelected:YES];
-	[UIView animateWithDuration:.25 delay:0 options:UIViewAnimationOptionBeginFromCurrentState
-					 animations:^{
-						 self.homeViewController.view.frame = CGRectMake(self.startWidth,
-																		 18,
-																		 self.view.frame.size.width - self.startWidth,
-																		 self.view.frame.size.height - 18);
-					 }
-					 completion:^(BOOL finished) {
-						 if (finished) {
-							 self.isFulPanel = FALSE;
-							 [self.homeViewController setIsFullMenu:self.isFulPanel];
-							 //							 [self resetMainView];
-						 }
-					 }];
+
+	
+//	[UIView animateWithDuration:.25 delay:0 options:UIViewAnimationOptionBeginFromCurrentState
+//					 animations:^{
+//						 self.homeViewController.view.frame = CGRectMake(self.startWidth,
+//																		 18,
+//																		 self.view.frame.size.width - self.startWidth,
+//																		 self.view.frame.size.height - 18);
+//					 }
+//					 completion:^(BOOL finished) {
+//						 if (finished) {
+//							 self.isFulPanel = FALSE;
+//							 [self.homeViewController setIsFullMenu:self.isFulPanel];
+//							 //							 [self resetMainView];
+//						 }
+//					 }];
 
 }
 
@@ -434,7 +440,7 @@ NSArray *btnTitleArray;
 						 self.homeViewController.view.frame = CGRectMake(self.max_width,
 																		 18,
 																		 self.view.frame.size.width - self.startWidth,
-																		 self.view.frame.size.height - 18);
+																		 self.view.frame.size.height /*- 18*/);
 					 }
 					 completion:^(BOOL finished) {
 						 if (finished) {
@@ -454,7 +460,7 @@ NSArray *btnTitleArray;
 						 self.homeViewController.view.frame = CGRectMake(self.startWidth,
 																		 18,
 																		 self.view.frame.size.width - self.startWidth,
-																		 self.view.frame.size.height - 18);
+																		 self.view.frame.size.height /*- 18*/);
 					 }
 					 completion:^(BOOL finished) {
 						 if (finished) {

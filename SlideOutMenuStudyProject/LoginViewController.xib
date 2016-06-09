@@ -10,8 +10,10 @@
             <connections>
                 <outlet property="email" destination="QhJ-nn-Ra7" id="lMd-4q-jUL"/>
                 <outlet property="emailAndPass" destination="VZi-YP-ThC" id="Sh5-FA-qaT"/>
+                <outlet property="emailTextLabel" destination="QhJ-nn-Ra7" id="fTZ-ep-joe"/>
                 <outlet property="forgotPassBtn" destination="ihY-wr-6II" id="ySI-uT-Cgw"/>
                 <outlet property="loginBtn" destination="pnC-HQ-oBs" id="Kei-pr-YlX"/>
+                <outlet property="passTextLabel" destination="J1g-1e-yJq" id="GCj-2g-GNu"/>
                 <outlet property="password" destination="J1g-1e-yJq" id="JyS-b9-KbH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,8 +23,8 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnC-HQ-oBs">
-                    <rect key="frame" x="150" y="440" width="300" height="85"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnC-HQ-oBs">
+                    <rect key="frame" x="150" y="377" width="300" height="27"/>
                     <color key="backgroundColor" red="0.46666666666666667" green="0.75294117647058822" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="85" id="NEN-fW-Xl6"/>
@@ -40,10 +42,10 @@
                         <action selector="verifyData:" destination="-1" eventType="touchUpInside" id="OIT-Kk-CUE"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihY-wr-6II">
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihY-wr-6II">
                     <rect key="frame" x="140" y="477" width="321" height="53"/>
                     <color key="backgroundColor" red="0.1764705882352941" green="0.1764705882352941" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="28"/>
                     <inset key="contentEdgeInsets" minX="15" minY="10" maxX="15" maxY="10"/>
                     <state key="normal" title="Forgot your password?">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -52,17 +54,17 @@
                         <action selector="toForgotPass:" destination="-1" eventType="touchUpInside" id="oVB-Ja-bGg"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VZi-YP-ThC">
-                    <rect key="frame" x="150" y="210" width="300" height="180"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VZi-YP-ThC">
+                    <rect key="frame" x="150" y="273" width="300" height="54"/>
                     <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QhJ-nn-Ra7">
-                            <rect key="frame" x="30" y="0.0" width="270" height="90"/>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QhJ-nn-Ra7">
+                            <rect key="frame" x="30" y="0.0" width="270" height="27"/>
                             <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J1g-1e-yJq">
-                            <rect key="frame" x="30" y="90" width="270" height="90"/>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J1g-1e-yJq">
+                            <rect key="frame" x="30" y="27" width="270" height="27"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
