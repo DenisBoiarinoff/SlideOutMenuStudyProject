@@ -10,10 +10,8 @@
             <connections>
                 <outlet property="email" destination="QhJ-nn-Ra7" id="lMd-4q-jUL"/>
                 <outlet property="emailAndPass" destination="VZi-YP-ThC" id="Sh5-FA-qaT"/>
-                <outlet property="emailTextLabel" destination="QhJ-nn-Ra7" id="fTZ-ep-joe"/>
                 <outlet property="forgotPassBtn" destination="ihY-wr-6II" id="ySI-uT-Cgw"/>
                 <outlet property="loginBtn" destination="pnC-HQ-oBs" id="Kei-pr-YlX"/>
-                <outlet property="passTextLabel" destination="J1g-1e-yJq" id="GCj-2g-GNu"/>
                 <outlet property="password" destination="J1g-1e-yJq" id="JyS-b9-KbH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -42,8 +40,8 @@
                         <action selector="verifyData:" destination="-1" eventType="touchUpInside" id="OIT-Kk-CUE"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihY-wr-6II">
-                    <rect key="frame" x="140" y="477" width="321" height="53"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihY-wr-6II">
+                    <rect key="frame" x="151" y="476" width="298" height="54"/>
                     <color key="backgroundColor" red="0.1764705882352941" green="0.1764705882352941" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="28"/>
                     <inset key="contentEdgeInsets" minX="15" minY="10" maxX="15" maxY="10"/>

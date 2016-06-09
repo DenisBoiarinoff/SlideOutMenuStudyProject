@@ -8,9 +8,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
             <connections>
-                <outlet property="background" destination="KtF-an-YMa" id="5y6-Vv-AOz"/>
-                <outlet property="infoView2" destination="49J-oP-XAw" id="xO8-xh-cgR"/>
-                <outlet property="titleLabel2" destination="EI6-4Y-wpd" id="a1d-BO-3ds"/>
+                <outlet property="infoView" destination="49J-oP-XAw" id="34E-Fd-NzP"/>
+                <outlet property="titleLabel" destination="EI6-4Y-wpd" id="O2y-Pc-lOr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

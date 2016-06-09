@@ -8,12 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-//@class MainViewController;
-
 @interface LoginViewController : UIViewController
-
-@property (strong, nonatomic) IBOutlet UITextField *emailTextLabel;
-@property (strong, nonatomic) IBOutlet UITextField *passTextLabel;
 
 @property (strong, nonatomic) IBOutlet UIView *emailAndPass;
 @property (strong, nonatomic) IBOutlet UIButton *loginBtn;
@@ -22,8 +17,6 @@
 @property (strong, nonatomic) IBOutlet UITextField *password;
 
 @property (strong, nonatomic) IBOutlet UIButton *forgotPassBtn;
-
-//@property (strong, nonatomic) MainViewController *mainViewController;
 
 - (IBAction)verifyData:(id)sender;
 - (IBAction)toForgotPass:(id)sender;

@@ -26,15 +26,10 @@ static NSString *menuImgUrl = @"search";
     [super viewDidLoad];
 
 	[self configureInfoView];
-
 }
 
 - (void) viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-
-//	UIImage *img = [UIImage imageNamed:backgroundImg];
-//	[self.background setImage:img];
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,28 +37,7 @@ static NSString *menuImgUrl = @"search";
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-- (IBAction)someBTN:(id)sender {
-	NSLog(@"Some BTN");
-
-}
-
 - (IBAction)menuBtn:(id)sender {
-	NSLog(@"Menu Btn");
-
-	if (self.parentViewController) {
-
-	}
-
 	if (self.isFullMenu) {
 		[self.delegate movePanelToOriginalPosition];
 		self.isFullMenu = false;
@@ -75,7 +49,7 @@ static NSString *menuImgUrl = @"search";
 
 - (void)setTitle:(NSString *)title
 {
-	[self.titleLabel2 setText:title];
+	[self.titleLabel setText:title];
 }
 
 - (void) configureInfoView
@@ -88,8 +62,7 @@ static NSString *menuImgUrl = @"search";
 	rightBorder.frame = CGRectMake(menuBtnWidth, 0, 1.0f, menuBtnHeight);
 
 	rightBorder.backgroundColor = [UIColor colorwithHexString:@"e9e9e9" alpha:1.].CGColor;
-//	rightBorder.backgroundColor = [UIColor greenColor].CGColor;
-	[self.infoView2.layer addSublayer:rightBorder];
+	[self.infoView.layer addSublayer:rightBorder];
 
 
 	CGRect frameRrect = CGRectMake(0, 0, menuBtnWidth, menuBtnHeight);
@@ -126,7 +99,7 @@ static NSString *menuImgUrl = @"search";
 			action:@selector(menuBtn:)
   forControlEvents:UIControlEventTouchUpInside];
 
-	[self.infoView2 addSubview:btn];
+	[self.infoView addSubview:btn];
 
 }
 

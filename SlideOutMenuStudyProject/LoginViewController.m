@@ -43,9 +43,8 @@
 
 	[self.email setFont:[UIFont fontWithName:@"Helvetica-Neue-Bold" size:emailHeight/2]];
 	[self.password setFont:[UIFont fontWithName:@"Helvetica-Neue-Bold" size:emailHeight/2]];
-	[self.loginBtn setFont:[UIFont fontWithName:@"Helvetica-Neue-Bold" size:emailHeight/2]];
-	[self.forgotPassBtn setFont:[UIFont fontWithName:@"Helvetica-Neue-Bold" size:emailHeight/2]];
-
+	[self.loginBtn.titleLabel setFont:[UIFont fontWithName:@"Helvetica-Neue-Bold" size:emailHeight/2]];
+	[self.forgotPassBtn.titleLabel setFont:[UIFont fontWithName:@"Helvetica-Neue-Bold" size:emailHeight/2]];
 
     // Do any additional setup after loading the view from its nib.
 }
